@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Community Media Library</title>{% endblock %}
+  {% load static %} 
+	<link rel="stylesheet" href="{% static 'css/app.css' %}">
+	<link rel="stylesheet" href="{% static 'css/foundation.css' %}">
+	<style type="text/css">
+	tr {
+		text-align: left;
+	}
+
+	body {
+		overflow-x: hidden; 
+	}
+
+	h3 {
+		font-weight: bold;
+		text-transform: uppercase;
+		padding: 20px;
+		text-align: center;
+	}
+
+	td{
+		padding-top: 15px;
+		padding-bottom: 15px;
+		padding-right: 10px;
+	}
+
+	td, th {
+		border-left: 1px solid #fefefe;
+		border-right: 1px solid #fefefe;
+	}
+
+	</style>
+
+</head>
+
+<body>
+  {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}
+  {% block content %}<!-- default content text (typically empty) -->{% endblock %}
+
+{% load static %}
+    <script src="{% static "js/jquery.js" %}"></script>
+    <script src="{% static "js/foundation.js" %}"></script>
+    <script src="{% static "js/app.js" %}"></script>
+    <script src="{% static "js/what-input.js" %}"></script>
+</body>
+</html>

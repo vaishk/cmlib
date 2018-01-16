@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="grid-x grid-margin-x">
+	<div class="cell large-10 large-offset-1">
+	<h3> Community Media Library</h3>
+	<table class="striped hover">
+	  <thead>
+	    <tr>
+	    <th width="300">Tittle</th>
+	      <th width="200">Author</th>
+	      <th width="150">ISBN</th>
+	      <th width="200">Categories</th>
+	      <th width="200">Borrowed By</th>
+	      <th width="150">Borrowed Till</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	  {% for book in all_books.all %}
+	    <tr>
+	      <td>{{ book.title }}</td>
+	      <td>{{ book.author }}</td>
+	      <td>{{ book.isbn }}</td>
+	      <td> {% for category in book.categories.all %}  {{ category }} <br /> {% endfor %} </td>
+	      <td>{{ book.borrowed_by }}</td>
+	      <td>{{ book.borrowed_till }}</td>
+	    </tr>
+	   	{% endfor %}
+	  </tbody>
+	</table>
+	</div>
+
+</div>
+
+{% endblock %}
